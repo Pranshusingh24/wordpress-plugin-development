@@ -1,0 +1,360 @@
+/* ═══════════════════════════════════════════════════════════════════════
+   Datainitial Contact Forms — Admin Styles
+═══════════════════════════════════════════════════════════════════════ */
+
+/* ── Wrap ── */
+.dcf-wrap {
+    max-width: 1400px;
+}
+
+.dcf-wrap h1.wp-heading-inline {
+    font-size: 22px;
+    font-weight: 700;
+    margin-right: 8px;
+}
+
+/* ── Total badge next to heading ── */
+.dcf-total-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #2E2A8C;
+    color: #fff;
+    font-size: 12px;
+    font-weight: 700;
+    border-radius: 20px;
+    padding: 2px 10px;
+    vertical-align: middle;
+    margin-left: 4px;
+    line-height: 1.8;
+}
+
+/* ── Toolbar: search + export ── */
+.dcf-toolbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 16px 0 12px;
+}
+
+.dcf-search-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.dcf-search-input {
+    min-width: 260px;
+    padding: 6px 10px;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.dcf-status-filter {
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.dcf-export-btn {
+    display: inline-flex !important;
+    align-items: center;
+    gap: 5px;
+    background: #2E2A8C !important;
+    border-color: #2E2A8C !important;
+    color: #fff !important;
+    font-weight: 600 !important;
+    padding: 6px 16px !important;
+    border-radius: 4px !important;
+    text-decoration: none !important;
+    transition: background 0.2s ease !important;
+}
+
+.dcf-export-btn:hover {
+    background: #3A4FB7 !important;
+    border-color: #3A4FB7 !important;
+    color: #fff !important;
+}
+
+/* ── Table ── */
+.dcf-table {
+    margin-top: 0;
+    border-radius: 6px;
+    overflow: hidden;
+}
+
+.dcf-table thead th {
+    background: #f6f7f7;
+    font-weight: 700;
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #50575e;
+    padding: 10px 12px;
+}
+
+.dcf-table tbody td {
+    padding: 10px 12px;
+    vertical-align: middle;
+    font-size: 13px;
+}
+
+.dcf-col-id {
+    width: 50px;
+}
+
+.dcf-subject {
+    max-width: 180px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.dcf-name-link {
+    font-weight: 600;
+    color: #2E2A8C;
+    text-decoration: none;
+}
+
+.dcf-name-link:hover {
+    text-decoration: underline;
+    color: #3A4FB7;
+}
+
+/* ── Status row highlight ── */
+.dcf-row.dcf-status-new td:first-child {
+    border-left: 3px solid #f59e0b;
+}
+
+.dcf-row.dcf-status-read td:first-child {
+    border-left: 3px solid #6b7280;
+}
+
+.dcf-row.dcf-status-replied td:first-child {
+    border-left: 3px solid #22c55e;
+}
+
+.dcf-row.dcf-status-spam td:first-child {
+    border-left: 3px solid #ef4444;
+}
+
+/* ── Status badges ── */
+.dcf-badge {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.dcf-badge--new {
+    background: #fef3c7;
+    color: #92400e;
+}
+
+.dcf-badge--read {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.dcf-badge--replied {
+    background: #dcfce7;
+    color: #166534;
+}
+
+.dcf-badge--spam {
+    background: #fee2e2;
+    color: #991b1b;
+}
+
+/* ── Actions column ── */
+.dcf-actions {
+    white-space: nowrap;
+    display: flex;
+    gap: 6px;
+    align-items: center;
+}
+
+.dcf-btn-delete {
+    color: #b91c1c !important;
+    border-color: #fca5a5 !important;
+}
+
+.dcf-btn-delete:hover {
+    background: #fee2e2 !important;
+    border-color: #ef4444 !important;
+}
+
+/* ── Empty state ── */
+.dcf-empty {
+    text-align: center;
+    padding: 40px !important;
+    color: #6b7280;
+    font-size: 14px;
+}
+
+/* ── Pagination ── */
+.dcf-pagination {
+    margin-top: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.dcf-pagination .page-numbers {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 8px;
+    border: 1px solid #c3c4c7;
+    border-radius: 4px;
+    font-size: 13px;
+    text-decoration: none;
+    color: #2c3338;
+    background: #fff;
+    transition: background 0.15s ease;
+}
+
+.dcf-pagination .page-numbers.current {
+    background: #2E2A8C;
+    border-color: #2E2A8C;
+    color: #fff;
+    font-weight: 700;
+}
+
+.dcf-pagination .page-numbers:hover:not(.current) {
+    background: #f0f0f1;
+}
+
+.dcf-pagination-info {
+    font-size: 12px;
+    color: #6b7280;
+    margin: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════════════════
+   Detail page
+═══════════════════════════════════════════════════════════════════════ */
+.dcf-back-link {
+    font-size: 14px;
+    font-weight: 400;
+    color: #2E2A8C;
+    text-decoration: none;
+    margin-right: 12px;
+}
+
+.dcf-back-link:hover {
+    text-decoration: underline;
+}
+
+.dcf-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 24px;
+    margin-top: 20px;
+    align-items: start;
+}
+
+.dcf-detail-card {
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    padding: 24px 28px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+}
+
+.dcf-detail-card h3 {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111;
+    margin: 0 0 16px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.dcf-message-text {
+    font-size: 14px;
+    line-height: 1.75;
+    color: #374151;
+    white-space: pre-wrap;
+    word-break: break-word;
+    margin: 0;
+}
+
+/* ── Meta table ── */
+.dcf-meta-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13px;
+    margin-bottom: 20px;
+}
+
+.dcf-meta-table th,
+.dcf-meta-table td {
+    padding: 8px 10px;
+    border-bottom: 1px solid #f3f4f6;
+    text-align: left;
+    vertical-align: top;
+}
+
+.dcf-meta-table th {
+    width: 110px;
+    font-weight: 600;
+    color: #6b7280;
+    white-space: nowrap;
+}
+
+.dcf-meta-table td {
+    color: #111;
+    word-break: break-word;
+}
+
+/* ── Status update form ── */
+.dcf-status-form {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: wrap;
+    margin-bottom: 16px;
+    padding: 14px;
+    background: #f9fafb;
+    border-radius: 6px;
+}
+
+.dcf-status-form label {
+    font-size: 13px;
+    font-weight: 600;
+    color: #374151;
+}
+
+.dcf-status-form select {
+    padding: 5px 8px;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+/* ── Delete form ── */
+.dcf-delete-form {
+    margin-top: 8px;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+    .dcf-detail-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .dcf-toolbar {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
