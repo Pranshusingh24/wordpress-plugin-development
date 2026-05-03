@@ -1,0 +1,213 @@
+/* ═══════════════════════════════════════════════════════════════════════════
+   ContactForm.css
+   Standalone form styles — inputs, labels, button, spinner, success state.
+   Used by ContactForm.jsx only.
+═══════════════════════════════════════════════════════════════════════════ */
+
+/* ── Form wrapper ── */
+.cf__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-top: 12px;
+}
+
+/* ── Two-column row ── */
+.cf__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* ── Field group ── */
+.cf__group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+/* ── Label ── */
+.cf__label {
+  font-size: 24px;
+  font-weight: 500;
+  color: #111;
+  letter-spacing: 0.01em;
+}
+
+/* ── Input / Textarea base ── */
+.cf__input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 20px;
+    font-family: var(--font, 'Nunito', sans-serif);
+    font-weight: 400;
+    color: #111;
+    background: #fff;
+    border: 1.5px solid #d8dce6;
+    border-radius: 8px;
+    outline: none;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    appearance: none;
+    box-sizing: border-box;
+}
+
+.cf__input::placeholder {
+  color: #b0b5c3;
+  font-weight: 400;
+}
+.cf__input:focus {
+    border-color: #4E7CCF;
+}
+.cf__group--error .cf__input {
+  border-color: #e53e3e;
+}
+.cf__group--error .cf__input:focus {
+  box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
+}
+.cf__error {
+  font-size: 12px;
+  font-weight: 600;
+  color: #e53e3e;
+}
+.cf__textarea {
+  resize: vertical;
+  min-height: 130px;
+  line-height: 1.6;
+}
+.cf__submit-error {
+  font-size: 13px;
+  color: #e53e3e;
+  font-weight: 500;
+  text-align: center;
+  margin: 0;
+}
+.cf__submit-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 4px;
+}
+.cf__submit {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    width: 55%;
+    padding: 14px 32px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #2E2A8C;
+    background: transparent;
+    border: 1px solid #2E2A8C;
+    border-radius: 8px;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    transition: background 0.22s ease, color 0.22s ease,
+              box-shadow 0.2s ease, transform 0.18s ease;
+}
+.cf__submit:hover:not(:disabled) {
+  background: #2E2A8C;
+  color: #fff;
+  transform: translateY(-1px);
+}
+
+.cf__submit:active:not(:disabled) {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.cf__submit:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* ── Spinner ── */
+.cf__spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(58, 79, 183, 0.25);
+  border-top-color: #3A4FB7;
+  border-radius: 50%;
+  animation: cf-spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes cf-spin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Success state ── */
+.cf__success {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.cf__success-icon {
+  width: 56px;
+  height: 56px;
+}
+
+.cf__success h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark, #111);
+  margin: 0;
+}
+
+.cf__success p {
+  font-size: 15px;
+  color: var(--text, #707070);
+  margin: 0;
+  max-width: 300px;
+}
+
+.cf__success-reset {
+  font-size: 14px;
+  font-weight: 600;
+  color: #3A4FB7;
+  background: none;
+  border: none;
+  cursor: pointer;
+  text-decoration: underline;
+  font-family: var(--font, 'Nunito', sans-serif);
+}
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE — Mobile screen
+═══════════════════════════════════════════════ */
+@media (max-width: 992px) {
+
+}
+@media (max-width: 768px) {
+  .cf__row {
+    grid-template-columns: 1fr;
+  }
+  .cf__label {
+  font-size: 16px;
+  padding-left: 6px;
+}
+.cf__group {
+    gap: 3px;
+}
+.cf__input {
+    width: 100%;
+    padding: 12px 16px;
+    font-size: 16px;
+}
+.cf__success h3 {
+  font-size: 16px;
+}
+.cf__success p {
+  font-size: 14px;
+  max-width: 300px;
+}
+  .cf__submit {
+    width: 100%;
+    font-size: 15px;
+    padding: 12px 20px;
+  }
+}
