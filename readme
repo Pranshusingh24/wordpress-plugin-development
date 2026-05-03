@@ -1,0 +1,144 @@
+# Datainitial Contact Forms
+
+A complete **Headless WordPress + React Contact Form System** built for **Datainitial** that connects a custom WordPress plugin backend with a modern React frontend.
+
+This project allows your React website to submit contact inquiries directly into WordPress using REST API endpoints, while also providing an admin dashboard for managing submissions.
+
+---
+
+# 🌐 Live Project
+### Website:
+https://datanitial.com
+
+---
+
+# 📌 Project Purpose
+
+This system was developed to:
+
+- Capture leads from React frontend
+- Store inquiries inside WordPress database
+- Manage submissions from WordPress Admin
+- Export leads as CSV
+- Support Headless WordPress architecture
+- Integrate with Contact Form 7 where required
+
+---
+🚀 Features
+WordPress Plugin Features
+Custom REST API
+Secure database storage
+WordPress Admin Dashboard
+CSV export
+Headless WordPress support
+CORS-ready
+Contact Form 7 compatibility
+Modular PHP architecture
+---
+React Frontend Features
+Modular component structure
+Responsive design
+Validation
+Async API submission
+Dynamic form ID support
+Reusable components
+Clean UI/UX
+Scalable frontend architecture
+---
+
+# 🏗 Project Architecture
+
+## Backend (WordPress Plugin)
+Custom plugin folder:
+
+```bash
+datainitial-contact-forms/
+│
+├── assets/
+│   └── admin.css
+│
+├── includes/
+│   ├── class-dcf-admin.php
+│   ├── class-dcf-db.php
+│   └── class-dcf-rest-api.php
+│
+└── datainitial-contact-forms.php
+
+
+Frontend (React Components)
+contact/
+│
+├── contactApi.js
+├── ContactForm.css
+├── ContactForm.jsx
+
+----
+🔒 Security
+Backend Security:
+sanitize_text_field()
+sanitize_email()
+REST API validation
+Safe DB insertion
+Admin access control
+Frontend Security:
+Client-side validation
+Required field checks
+Error handling
+Async request protection
+📊 Admin Dashboard
+Access:
+WordPress Dashboard → Datainitial Contact Forms → Submissions
+Admin Can:
+View submissions
+Manage inquiries
+Export CSV
+Track lead history
+🎯 Ideal Use Cases
+
+Perfect for:
+
+Corporate websites
+SaaS lead generation
+Headless WordPress projects
+Business inquiry systems
+Agency websites
+React + WordPress architecture
+🧩 Tech Stack
+Backend:
+WordPress
+PHP
+MySQL
+REST API
+Frontend:
+React
+Vite
+JavaScript
+CSS
+Contact Form 7 Integration
+--
+/** Submit a custon contact form REST endpoint */
+export async function submitContactForm(formData) {
+  const acf = await fetchContactPage().catch(() => ({}));
+  const formId = acf?.cf7_form_id || 1;
+
+  const body = new URLSearchParams();
+  Object.entries(formData).forEach(([k, v]) => body.append(k, v));
+
+  const res = await fetch(
+    `${WP_BASE}/contact-form-7/v1/contact-forms/${formId}/feedback`,
+    { method: "POST", body }
+  );
+
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  return res.json();
+}
+
+👨‍💻 Author
+Pranshu Singh
+Portfolio:
+
+https://pranshusingh19.github.io/pranshu_portfolio/
+
+For Develop 
+Company Name:
+https://datanitial.com
